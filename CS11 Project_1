@@ -1,0 +1,27 @@
+import plotly.plotly as py
+import plotly.graph objs as go
+import pandas as pd
+
+df = pd read_cav('https://data.gov.ph/sites/default/files/MMDA_SolidWasteManagementPlan_1.csv')
+
+QC = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Quezon City')]
+CC = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Caloocan City')]
+MB = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Malabon City')]
+NV = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Navotas City')]
+VA = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Valenzuela City')]
+SJ = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='San Juan City')]
+MR = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Marikina City')]
+PG = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Pasig City')]
+PT = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Pateros')]
+TG = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Taguig City')]
+MN = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Manila City')]
+MD = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Mandaluyong City')]
+MK = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Makati City')]
+PC = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Pasay City')]
+PQ = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Paranaque City')]
+LP = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Las Pinas City')]
+MU = df[(df.estimated_waste_generation_for_metro_manila_as_of_Jan_2018=='Muntinlupa City')]
+
+labels = ['Quezon City', 'Caloocan City', 'Malabon City', 'Navotas City', 'Valenzuela City', 'San Juan City', 'Marikina City', 'Pasig City', 'Pateros', 'Taguig City', 'Manila City', 'Mandaluyong City', 'Makati City', 'Pasay City', 'Paranaque City', 'Las Pinas City', 'Muntinlupa City']
+values = [QC.tons_per_day, CC.tons_per_day, MB.tons_per_day, NV.tons_per_day, VA.tons_per_day, SJ.tons_per_day, MR.tons_per_day, PG.tons_per_day, PT.tons_per_day, TG.tons_per_day, MN.tons_per_day, MD.tons_per_day, MK.tons_per_day, PC.tons_per_day, PQ.tons_per_day, LP.tons_per_day, MU.tons_per_day]
+trace = go.Bar(labels=labels, values=values)
